@@ -6,23 +6,26 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class BankController {
 
-    private static final Bank myBank = new Bank();
+    private Bank myBank;
+    private Stage mainStage;
     @FXML
     private Label welcomeText;
 
+    //WE are not calling the constructor of Bank from this file!!
 
     private void initialize(){
-        //myBank = new Bank();
-        myBank.loadMembersFromFile();
-        myBank.loadTellersFromFile();
+        myBank = Bank.getBankInstance();
         //Now, I can access the two arrayLists inside the bank object
     }
+
+
 
 
     @FXML
@@ -39,18 +42,22 @@ public class BankController {
         Scene scene = null;
         try {
             scene = new Scene(fxmlLoader.load(), 320, 240);
-            Stage stage = new Stage();
-            stage.setTitle("All Bank members!");
-            stage.setScene(scene);
-            stage.show();
+            Stage newStage = new Stage();
+            //
+            newStage.initModality(Modality.WINDOW_MODAL);
+            newStage.initOwner(this.mainStage);
+            newStage.setTitle("All Bank members!");
+            newStage.setScene(scene);
+            newStage.showAndWait();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
     }
 
-    public static Bank getMyBank(){
-        return myBank;
+    public void setStage(Stage stage){
+        this.mainStage = stage;
     }
+
 
 }

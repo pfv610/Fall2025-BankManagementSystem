@@ -5,15 +5,29 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
+//Design Architectural pattern we used in Bank is a ***Singleton***
 public class Bank {
     //Data structures for storing all the members (ArrayList of Members)
     //ArrayList of all tellers
 
     ArrayList<Member> members; //Collection of Members //aggregation  or composition
     ArrayList<Teller> tellers; //Collection of Tellers// Aggregation ot composition
+
+    private static Bank bankInstance;
+
     public Bank(){
         this.members = new ArrayList<>();
         this.tellers = new ArrayList<>();
+    }
+
+    public static Bank getBankInstance(){
+        if(bankInstance == null){
+            bankInstance = new Bank(); //This is the only place we call the constructor of the Bank
+            bankInstance.loadMembersFromFile();
+            bankInstance.loadTellersFromFile();
+        }
+        return bankInstance;
     }
 
     public void loadMembersFromFile(){
