@@ -1,0 +1,13 @@
+Chen,Wei,chen.wei88@example.cn,+86-138-1234-5678,A101,Dr@gon#88,6420.15
+Maria,Oliveira,maria.oliveira@example.br,+55-21-99876-5432,A102,P@oDeQueijo77,210.05
+David,Johnson,david.j@example.com,+1-312-555-0199,A103,WindyC1ty!,987.6
+Leila,Haddad,leila.haddad@example.ma,+212-661-234-567,A104,C@sablanca22,4123.9
+Omar,Ali,omar.ali@example.eg,+20-122-987-6543,A105,Nile#River99,0.0
+Nora,Bergström,nora.bergstrom@example.se,+46-70-123-4567,A106,Swed3n@77,15045.25
+Carlos,García,carlos.garcia@example.mx,+52-55-6789-1234,A107,T@coMan12,342.8
+Priya,Sharma,priya.sharma@example.in,+91-99880-11223,A108,L0tusBlossom,5287.4
+Mohammed,Abdullahi,mohammed.abd@example.ng,+234-803-555-6677,A109,Naija#2025,1175.0
+Hanna,Kowalska,h.kowalska@example.pl,+48-601-234-567,A110,P13rog1es!,275.95
+Jacob,Stein,jacob.stein@example.il,+972-50-765-4321,A111,Jerus@lem44,7009.1
+b,b,b,b,b,b,300.0
+c,cc,cc,cc,c,cc,990.0
