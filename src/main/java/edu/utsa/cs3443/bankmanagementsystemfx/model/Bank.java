@@ -6,15 +6,24 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
-//Design Architectural pattern we used in Bank is a ***Singleton***
-public class Bank {
+//Design pattern we used in Bank is a ***Singleton*** => Creational Design Pattern
+//final class: we cannot create objects from this class
+public final class Bank {
     //Data structures for storing all the members (ArrayList of Members)
     //ArrayList of all tellers
 
     ArrayList<Member> members; //Collection of Members //aggregation  or composition
     ArrayList<Teller> tellers; //Collection of Tellers// Aggregation ot composition
+    private Teller currentTeller;
 
-    private static Bank bankInstance;
+    public void setCurrentTeller(Teller teller){
+        this.currentTeller = teller;
+    }
+
+    public Teller getCurrentTeller(){
+        return this.currentTeller;
+    }
+    private static Bank bankInstance = new Bank();
 
     public Bank(){
         this.members = new ArrayList<>();
@@ -113,6 +122,15 @@ public class Bank {
     private String convertMembertoLine(Member member){
         return member.getFirstName() + "," + member.getLastName() + "," + member.getEmail() + "," +
                 member.getPhoneNumber() + "," + member.getPinCode() + ","+ member.getBalance();
+    }
+
+    public Teller findTeller(String userName, String password){
+        for(Teller teller: tellers){
+            if(teller.getUserName().equalsIgnoreCase(userName) && teller.getPassword().equalsIgnoreCase(password)){
+                return teller;
+            }
+        }
+        return null;
     }
 
 

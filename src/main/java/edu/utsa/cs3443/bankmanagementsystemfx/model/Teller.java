@@ -55,6 +55,8 @@ public class Teller extends Person{
         return this.userName;
     }
 
+    public String getPassword(){return this.password;}
+
     //TODO: setters and getters
 
     public boolean hasPermission(Permissions permissions){
