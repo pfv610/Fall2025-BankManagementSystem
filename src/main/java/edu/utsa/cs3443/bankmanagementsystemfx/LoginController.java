@@ -42,6 +42,8 @@ public class LoginController {
             loginFailedLabel.setText("Username or password are empty!");
         }
         else{
+            System.out.println(userName);
+            System.out.println(password);
             Teller teller = myBank.findTeller(userName, password);
             System.out.println(teller.toString());
             if(teller == null){

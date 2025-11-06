@@ -23,7 +23,7 @@ public final class Bank {
     public Teller getCurrentTeller(){
         return this.currentTeller;
     }
-    private static Bank bankInstance = new Bank();
+    private static Bank bankInstance;
 
     public Bank(){
         this.members = new ArrayList<>();
@@ -62,6 +62,7 @@ public final class Bank {
             while(scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 String[] elements = line.split(",");
+                System.out.println(elements.toString());
                 Teller teller = new Teller(elements[0],elements[1],elements[2], elements[3], elements[4], elements[5], Integer.valueOf(elements[6]));
                 members.size();
                 tellers.add(teller);
