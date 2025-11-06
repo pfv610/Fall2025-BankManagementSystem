@@ -45,11 +45,12 @@ public class LoginController {
             System.out.println(userName);
             System.out.println(password);
             Teller teller = myBank.findTeller(userName, password);
-            System.out.println(teller.toString());
+
             if(teller == null){
                 loginFailedLabel.setText("Enter Valid username and password!");
             }
             else{
+                System.out.println(teller.toString());
                 login(teller);
             }
         }

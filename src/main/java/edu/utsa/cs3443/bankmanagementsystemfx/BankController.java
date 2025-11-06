@@ -19,10 +19,15 @@ public class BankController {
     private Label welcomeText;
 
     //WE are not calling the constructor of Bank from this file!!
-
+    //The initialize method can exist in any of the controller classes you creat!!!
+    //As soon as the FXML loader, loads the controller of the FXML file, then
+    //the initilaize method will be called!!!
+    //NEVER forget to add @FXML for this method
+    @FXML
     private void initialize(){
         myBank = Bank.getBankInstance();
         //Now, I can access the two arrayLists inside the bank object
+        welcomeText.setText("Welcome " + myBank.getCurrentTeller().getFirstName());
     }
 
 
